@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "noEmitOnError": true
+  },
+  "include": [
+    "src",
+    "typings"
+  ]
+}
