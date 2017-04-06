@@ -1,11 +1,5 @@
 System.config({
-  baseUrl: 'http://127.0.0.1:8080/',
-  //use typescript for compilation
-  transpiler: 'typescript',
-  //typescript compiler options
-  typescriptOptions: {
-    emitDecoratorMetadata: true
-  },
+  baseUrl: 'http://127.0.0.1:8080',
   paths: {
     'npm:': './node_modules/'
     //'npm:': 'https://unpkg.com/'
@@ -13,7 +7,12 @@ System.config({
   //map tells the System loader where to look for things
   map: {
 
-    'app': './src',
+    'app': './build',
+
+    'core-js':'npm:core-js/client/core.min.js',
+    'zone.js':'npm:zone.js/dist/zone.min.js',
+    'long-stack-trace-zone':'npm:zone.js/dist/long-stack-trace-zone.min.js',
+    'Reflect':'npm:reflect-metadata/Reflect.js',
 
     '@angular/core': 'npm:@angular/core/bundles/core.umd.min.js',
     '@angular/common': 'npm:@angular/common/bundles/common.umd.min.js',
@@ -48,13 +47,21 @@ System.config({
         'lodash'
       ],
       format:'global'
+    },
+    '@angular/core':{
+      deps: [
+        'core-js',
+        'zone.js',
+        'long-stack-trace-zone',
+        'Reflect',
+      ]
     }
   },
   //packages defines our app package
   packages: {
     app: {
-      main: './main.ts',
-      defaultExtension: 'ts'
+      main: './main.js',
+      defaultExtension: 'js'
     },
     rxjs: {
       defaultExtension: 'js'

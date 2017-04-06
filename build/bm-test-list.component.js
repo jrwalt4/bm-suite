@@ -1,4 +1,12 @@
 "use strict";
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -48,18 +56,10 @@ var BmTestListComponent = (function () {
             }).then(function (resultEvent) {
                 subs.unsubscribe();
                 var suite = resultEvent.currentTarget;
-                var tests = [];
-                for (var _i = 0, suite_1 = suite; _i < suite_1.length; _i++) {
-                    var test = suite_1[_i];
-                    tests.push(test);
-                }
-                // need sorting algorithm
-                tests.slice().sort(function (test1, test2) {
-                    return test2.compare(test1);
-                }).forEach(function (test, i) {
-                    tests[tests.indexOf(test)].stats.rank = i + 1;
+                var results = suite.map(function (test) {
+                    return __assign({ name: test.name }, test.stats);
                 });
-                _this.store.dispatch(bm_reducer_1.BmActions.testsComplete(tests));
+                _this.store.dispatch(bm_reducer_1.BmActions.testsComplete(results));
             })["catch"](function (err) {
                 alert(err.message);
             });

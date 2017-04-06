@@ -45,7 +45,7 @@ let initialState = {
     new BmTest()
   ],
   isRunning:false,
-  results:void 0
+  results:[]
 }
 
 export function reducer(state = initialState, action:any) {
@@ -71,7 +71,7 @@ export function reducer(state = initialState, action:any) {
       case BmActionType.RUN_TESTS:{
         return Object.assign({},state, {
           isRunning:true,
-          results:void 0
+          results:[]
         })
       }
       case BmActionType.TESTS_COMPLETE: {

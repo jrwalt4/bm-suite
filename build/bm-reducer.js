@@ -50,7 +50,7 @@ var initialState = {
         new bm_test_1.BmTest()
     ],
     isRunning: false,
-    results: void 0
+    results: []
 };
 function reducer(state, action) {
     if (state === void 0) { state = initialState; }
@@ -76,7 +76,7 @@ function reducer(state, action) {
             case exports.BmActionType.RUN_TESTS: {
                 return Object.assign({}, state, {
                     isRunning: true,
-                    results: void 0
+                    results: []
                 });
             }
             case exports.BmActionType.TESTS_COMPLETE: {

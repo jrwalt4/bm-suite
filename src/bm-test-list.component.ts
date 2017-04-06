@@ -69,18 +69,13 @@ export class BmTestListComponent {
         })
       }).then((resultEvent:Benchmark.Event)=>{
         subs.unsubscribe();
-        let suite = <Benchmark[]>resultEvent.currentTarget;
-        let tests:Benchmark[] = [];
-        for(let test of suite) {
-          tests.push(test)
-        }
-        // need sorting algorithm
-        tests.slice().sort((test1:Benchmark, test2:Benchmark)=>{
-          return test2.compare(test1)
-        }).forEach((test, i)=>{
-          tests[tests.indexOf(test)].stats.rank = i + 1;
-        })
-        this.store.dispatch(BmActions.testsComplete(tests))
+        let suite:Benchmark.Suite = <Benchmark.Suite>resultEvent.currentTarget;
+        let results:Benchmark[] = suite.map(test=>{
+          return {
+            name:test.name,
+            ...test.stats}
+        });
+        this.store.dispatch(BmActions.testsComplete(results))
       }).catch(err=>{
         alert(err.message)
       })
