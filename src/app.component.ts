@@ -5,10 +5,12 @@ import {Component, ChangeDetectionStrategy} from '@angular/core'
   selector: 'app',
   template:
   `
+    <div class="jumbotron">
+      <h1>{{name}}</h1>
+    </div>
     <div>
-      <h2>{{name}}</h2>
-      <bm-results></bm-results>
       <bm-test-list></bm-test-list>
+      <bm-results></bm-results>
       <bm-debug></bm-debug>
     </div>
   `,

@@ -7,7 +7,7 @@ import * as Benchmark from 'benchmark'
 @Component({
   selector: 'bm-results',
   template: `
-  <div *ngIf="results$ | async">
+  <div *ngIf="(results$ | async).length">
     <table>
       <tr>
         <th>Test</th><th>Speed</th><th>Rank</th>

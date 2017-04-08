@@ -38,7 +38,7 @@ var BmResultsComponent = (function () {
 BmResultsComponent = __decorate([
     core_1.Component({
         selector: 'bm-results',
-        template: "\n  <div *ngIf=\"results$ | async\">\n    <table>\n      <tr>\n        <th>Test</th><th>Speed</th><th>Rank</th>\n      </tr>\n      <tr *ngFor=\"let test of results$ | async\">\n        <td>{{test.name}}</td>\n        <td>{{test.mean | number:'1.2-10'}}</td>\n        <td>{{test.rank}}</td>\n      </tr>\n    </table>\n  </div>\n  <div *ngIf=\"running$ | async\" >\n    <img \n      src=\"http://www.mytreedb.com/uploads/mytreedb/loader/ajax_loader_gray_512.gif\"\n      width=\"100\">\n  </div>\n  ",
+        template: "\n  <div *ngIf=\"(results$ | async).length\">\n    <table>\n      <tr>\n        <th>Test</th><th>Speed</th><th>Rank</th>\n      </tr>\n      <tr *ngFor=\"let test of results$ | async\">\n        <td>{{test.name}}</td>\n        <td>{{test.mean | number:'1.2-10'}}</td>\n        <td>{{test.rank}}</td>\n      </tr>\n    </table>\n  </div>\n  <div *ngIf=\"running$ | async\" >\n    <img \n      src=\"http://www.mytreedb.com/uploads/mytreedb/loader/ajax_loader_gray_512.gif\"\n      width=\"100\">\n  </div>\n  ",
         styles: [
             'table{border-collapse:collapse}',
             'td, th{border:1px solid black}'

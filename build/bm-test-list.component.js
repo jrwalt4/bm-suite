@@ -70,7 +70,7 @@ var BmTestListComponent = (function () {
 BmTestListComponent = __decorate([
     core_1.Component({
         selector: 'bm-test-list',
-        template: "\n    <div>\n      <button (click)=\"runTests()\" [disabled]=\"running$ | async\">Run Tests</button><br>\n      <label>Setup Code</label>\n      <textarea></textarea>\n      <br>\n      <bm-test \n        *ngFor=\"let test of tests$ | async\" \n        [test]=\"test\"\n        (onTestChange)=\"changeTest($event)\"\n        (onRemoveTest)=\"removeTest($event)\">\n      </bm-test>\n      <br>\n      <button (click)=\"newTest()\">Add Test</button>\n    </div>\n  "
+        template: "\n    <form class=\"form-horizontal\">\n      <div class=\"form-group\">\n        <label class=\"control-label col-lg-2\">Setup Code:</label>\n        <div class=\"col-lg-10\">\n          <textarea class=\"form-control\"></textarea>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"control-label col-lg-2\">Teardown Code:</label>\n        <div class=\"col-lg-10\">\n          <textarea class=\"form-control\"></textarea>\n        </div>\n      </div>\n    </form>\n      <button (click)=\"runTests()\" \n          [disabled]=\"running$ | async\"\n          class=\"btn btn-primary\">\n        Run Tests\n      </button>\n    <div>\n      <bm-test \n        *ngFor=\"let test of tests$ | async\" \n        [test]=\"test\"\n        (onTestChange)=\"changeTest($event)\"\n        (onRemoveTest)=\"removeTest($event)\">\n      </bm-test>\n    </div>\n    <button (click)=\"newTest()\" class=\"btn btn-success\">Add Test</button>\n  "
     }),
     __metadata("design:paramtypes", [store_1.Store])
 ], BmTestListComponent);

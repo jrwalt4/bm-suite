@@ -42,9 +42,9 @@ __decorate([
 BmTestComponent = __decorate([
     core_1.Component({
         selector: 'bm-test',
-        template: "\n    <div class=\"bm-test\">\n      <form id={{getName()}}>\n        <label for=\"name\">Test Name</label>\n        <input type=\"text\" name=\"name\" [(ngModel)]=\"test.name\"/>\n        <div class=\"form-group\">\n          <textarea name=\"fn\" class=\"code\" [(ngModel)]=\"test.fn\"></textarea>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"async\">Async</label>\n          <input type=\"checkbox\" name=\"async\" [(ngModel)]=\"test.async\"/>\n          <br>\n        </div>\n        <button (click)=\"onRemoveTest.emit(test)\">Delete</button>\n      </form>\n    </div>\n  ",
+        template: "\n    <div class=\"bm-test well\">\n      <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <label for=\"name\" class=\"control-label col-lg-3\">Test Name:</label>\n          <div class=\"col-lg-9\">\n          <input type=\"text\" name=\"name\" \n            [(ngModel)]=\"test.name\" class=\"form-control\"/>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"fn\" class=\"control-label col-lg-3\">Code:</label>\n          <div class=\"col-lg-9\">\n            <textarea name=\"fn\" class=\"code form-control col-lg-9\" \n              [(ngModel)]=\"test.fn\">\n            </textarea>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <div class=\"col-lg-4\">\n            <label for=\"async\" class=\"control-label\">\n              <input type=\"checkbox\" name=\"async\" [(ngModel)]=\"test.async\"/>\n              Async\n            </label>\n          </div>\n        </div>\n        <button (click)=\"onRemoveTest.emit(test)\" \n          class=\"btn btn-danger\" role=\"button\">Delete</button>\n      </form>\n    </div>\n  ",
         styles: [
-            "\n    .bm-test {\n      outline:1px solid black;\n      display:inline-block;\n      vertical-align:top;\n    }\n  "
+            "\n    .bm-test {\n      display:inline-block;\n      vertical-align:top;\n    }\n  "
         ]
     }),
     __metadata("design:paramtypes", [])

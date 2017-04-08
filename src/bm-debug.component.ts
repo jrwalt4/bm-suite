@@ -5,7 +5,7 @@ import {Store} from '@ngrx/store'
   selector:'bm-debug',
   template:
   `
-  <p>App State:</p>
+  <h2>App State:</h2>
   <pre>{{ state$ | async | json }}</pre>
   `
 })

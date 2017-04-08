@@ -21,7 +21,7 @@ var BmDebugComponent = (function () {
 BmDebugComponent = __decorate([
     core_1.Component({
         selector: 'bm-debug',
-        template: "\n  <p>App State:</p>\n  <pre>{{ state$ | async | json }}</pre>\n  "
+        template: "\n  <h2>App State:</h2>\n  <pre>{{ state$ | async | json }}</pre>\n  "
     }),
     __metadata("design:paramtypes", [store_1.Store])
 ], BmDebugComponent);

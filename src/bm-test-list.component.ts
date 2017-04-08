@@ -15,20 +15,34 @@ import {BmActions, reducer} from './bm-reducer'
   selector: 'bm-test-list',
   template: 
   `
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-lg-2">Setup Code:</label>
+        <div class="col-lg-10">
+          <textarea class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-lg-2">Teardown Code:</label>
+        <div class="col-lg-10">
+          <textarea class="form-control"></textarea>
+        </div>
+      </div>
+    </form>
+      <button (click)="runTests()" 
+          [disabled]="running$ | async"
+          class="btn btn-primary">
+        Run Tests
+      </button>
     <div>
-      <button (click)="runTests()" [disabled]="running$ | async">Run Tests</button><br>
-      <label>Setup Code</label>
-      <textarea></textarea>
-      <br>
       <bm-test 
         *ngFor="let test of tests$ | async" 
         [test]="test"
         (onTestChange)="changeTest($event)"
         (onRemoveTest)="removeTest($event)">
       </bm-test>
-      <br>
-      <button (click)="newTest()">Add Test</button>
     </div>
+    <button (click)="newTest()" class="btn btn-success">Add Test</button>
   `
 })
 export class BmTestListComponent {
