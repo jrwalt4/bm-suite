@@ -9,19 +9,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css" />
   <!-- angular shims -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.12/system.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.31/system.js">
 
   </script>
   <!--<script src="./node_modules/systemjs/dist/system.js"></script>-->
   <script src="config.js"></script>
   <script>
     System.import('app')
-      .catch((err) => {
+      .catch(function (err) {
         document.clear();
         var pre = document.createElement('pre')
         pre.setAttribute('style', 'color:red')
-        pre.innerText = err.stack;
+        pre.innerText = err.stack || err.message;
         document.body.append(pre);
+        console.error(err);
       });
   </script>
 </head>

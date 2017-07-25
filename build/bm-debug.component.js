@@ -16,13 +16,13 @@ var BmDebugComponent = (function () {
         this.store = store;
         this.state$ = store;
     }
+    BmDebugComponent = __decorate([
+        core_1.Component({
+            selector: 'bm-debug',
+            template: "\n  <h2>App State:</h2>\n  <pre>{{ state$ | async | json }}</pre>\n  "
+        }),
+        __metadata("design:paramtypes", [store_1.Store])
+    ], BmDebugComponent);
     return BmDebugComponent;
 }());
-BmDebugComponent = __decorate([
-    core_1.Component({
-        selector: 'bm-debug',
-        template: "\n  <h2>App State:</h2>\n  <pre>{{ state$ | async | json }}</pre>\n  "
-    }),
-    __metadata("design:paramtypes", [store_1.Store])
-], BmDebugComponent);
 exports.BmDebugComponent = BmDebugComponent;

@@ -48,6 +48,8 @@ let initialState = {
   results:[]
 }
 
+export type BmSuiteState = typeof initialState;
+
 export function reducer(state = initialState, action:any) {
   if(action) {
     switch(action.type) {

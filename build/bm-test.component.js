@@ -25,28 +25,28 @@ var BmTestComponent = (function () {
     BmTestComponent.prototype.getName = function () {
         return this.test.name;
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", bm_test_1.BmTest)
+    ], BmTestComponent.prototype, "test");
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], BmTestComponent.prototype, "onTestChange");
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], BmTestComponent.prototype, "onRemoveTest");
+    BmTestComponent = __decorate([
+        core_1.Component({
+            selector: 'bm-test',
+            template: "\n    <div class=\"bm-test well\">\n      <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <label for=\"name\" class=\"control-label col-lg-3\">Test Name:</label>\n          <div class=\"col-lg-9\">\n          <input type=\"text\" name=\"name\" \n            [(ngModel)]=\"test.name\" class=\"form-control\"/>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"fn\" class=\"control-label col-lg-3\">Code:</label>\n          <div class=\"col-lg-9\">\n            <textarea name=\"fn\" class=\"code form-control col-lg-9\" \n              [(ngModel)]=\"test.fn\">\n            </textarea>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <div class=\"col-lg-4\">\n            <label for=\"async\" class=\"control-label\">\n              <input type=\"checkbox\" name=\"async\" [(ngModel)]=\"test.async\"/>\n              Async\n            </label>\n          </div>\n        </div>\n        <button (click)=\"onRemoveTest.emit(test)\" \n          class=\"btn btn-danger\" role=\"button\">Delete</button>\n      </form>\n    </div>\n  ",
+            styles: [
+                "\n    .bm-test {\n      display:inline-block;\n      vertical-align:top;\n    }\n  "
+            ]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BmTestComponent);
     return BmTestComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", bm_test_1.BmTest)
-], BmTestComponent.prototype, "test");
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], BmTestComponent.prototype, "onTestChange");
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], BmTestComponent.prototype, "onRemoveTest");
-BmTestComponent = __decorate([
-    core_1.Component({
-        selector: 'bm-test',
-        template: "\n    <div class=\"bm-test well\">\n      <form class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <label for=\"name\" class=\"control-label col-lg-3\">Test Name:</label>\n          <div class=\"col-lg-9\">\n          <input type=\"text\" name=\"name\" \n            [(ngModel)]=\"test.name\" class=\"form-control\"/>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"fn\" class=\"control-label col-lg-3\">Code:</label>\n          <div class=\"col-lg-9\">\n            <textarea name=\"fn\" class=\"code form-control col-lg-9\" \n              [(ngModel)]=\"test.fn\">\n            </textarea>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <div class=\"col-lg-4\">\n            <label for=\"async\" class=\"control-label\">\n              <input type=\"checkbox\" name=\"async\" [(ngModel)]=\"test.async\"/>\n              Async\n            </label>\n          </div>\n        </div>\n        <button (click)=\"onRemoveTest.emit(test)\" \n          class=\"btn btn-danger\" role=\"button\">Delete</button>\n      </form>\n    </div>\n  ",
-        styles: [
-            "\n    .bm-test {\n      display:inline-block;\n      vertical-align:top;\n    }\n  "
-        ]
-    }),
-    __metadata("design:paramtypes", [])
-], BmTestComponent);
 exports.BmTestComponent = BmTestComponent;

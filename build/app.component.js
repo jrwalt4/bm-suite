@@ -12,13 +12,13 @@ var AppComponent = (function () {
     function AppComponent() {
         this.name = "Benchmark Testing";
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'app',
+            template: "\n    <div class=\"jumbotron\">\n      <h1>{{name}}</h1>\n    </div>\n    <div>\n      <bm-test-list></bm-test-list>\n      <bm-results></bm-results>\n      <bm-debug></bm-debug>\n    </div>\n  ",
+            changeDetection: core_1.ChangeDetectionStrategy.OnPush
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'app',
-        template: "\n    <div class=\"jumbotron\">\n      <h1>{{name}}</h1>\n    </div>\n    <div>\n      <bm-test-list></bm-test-list>\n      <bm-results></bm-results>\n      <bm-debug></bm-debug>\n    </div>\n  ",
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;

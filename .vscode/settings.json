@@ -1,5 +1,13 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-"editor.wordWrapColumn": 80,
-"vsicons.presets.angular": true
+    "editor.wordWrapColumn": 80,
+    "vsicons.presets.angular": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "node_modules": true
+    }
 }

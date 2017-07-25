@@ -19,23 +19,23 @@ var bm_reducer_1 = require("./bm-reducer");
 var AppModule = (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                store_1.StoreModule.forRoot(bm_reducer_1.reducer)
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                bm_test_component_1.BmTestComponent,
+                bm_results_component_1.BmResultsComponent,
+                bm_test_list_component_1.BmTestListComponent,
+                bm_debug_component_1.BmDebugComponent
+            ],
+            bootstrap: [app_component_1.AppComponent]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            forms_1.FormsModule,
-            store_1.StoreModule.provideStore(bm_reducer_1.reducer)
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            bm_test_component_1.BmTestComponent,
-            bm_results_component_1.BmResultsComponent,
-            bm_test_list_component_1.BmTestListComponent,
-            bm_debug_component_1.BmDebugComponent
-        ],
-        bootstrap: [app_component_1.AppComponent]
-    })
-], AppModule);
 exports.AppModule = AppModule;

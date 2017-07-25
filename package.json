@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "live jsPerf testing",
   "main": "index.html",
+  "scripts": {
+    "start": "lite-server"
+  },
   "repository": {
     "type": "git",
     "url": "github.com/jrwalt4/bm-suite.git"
@@ -24,8 +27,8 @@
     "@angular/platform-browser-dynamic": "latest",
     "@ngrx/core": "latest",
     "@ngrx/store": "latest",
-    "benchmark": "^2.1.3",
-    "lodash": "^4.17.4",
+    "benchmark": "latest",
+    "lodash": "latest",
     "rxjs": "latest",
     "zone.js": "latest",
     "core-js": "latest",
@@ -33,8 +36,8 @@
     "systemjs": "latest"
   },
   "devDependencies": {
-    "@angular/cli": "^1.0.0",
-    "http-server": "latest",
-    "typescript": "latest"
+    "lite-server": "latest",
+    "tslib": "^1.6.1",
+    "typescript": "^2.2.1"
   }
 }

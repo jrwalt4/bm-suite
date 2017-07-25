@@ -4,10 +4,12 @@ import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 import * as Benchmark from 'benchmark'
 
+import { BmSuiteState } from './bm-reducer';
+
 @Component({
   selector: 'bm-results',
   template: `
-  <div *ngIf="(results$ | async).length">
+  <div *ngIf="results$ | async">
     <table>
       <tr>
         <th>Test</th><th>Speed</th><th>Rank</th>
@@ -35,8 +37,8 @@ export class BmResultsComponent {
   results$: Observable<BmTestResult[]>
   running$: Observable<boolean>
 
-  constructor(private store: Store<any>) {
-    this.results$ = store.select('results').map((results: Benchmark.Stats[]) => {
+  constructor(private store: Store<{state:BmSuiteState}>) {
+    this.results$ = store.select('state','results').map((results: Benchmark.Stats[]) => {
       if (results) {
         let testResults = results.slice().sort((test1, test2) => test1.mean - test2.mean);
         return results.map<BmTestResult>(result => {
@@ -47,7 +49,7 @@ export class BmResultsComponent {
         })
       }
     })
-    this.running$ = store.select('isRunning');
+    this.running$ = store.select('state','isRunning');
   }
 }
 

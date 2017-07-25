@@ -9,7 +9,7 @@ import Benchmark = require('benchmark');
 import {BmTestComponent} from './bm-test.component'
 import {BmResultsComponent} from './bm-results.component'
 import {BmTest} from './bm-test'
-import {BmActions, reducer} from './bm-reducer'
+import { BmActions, reducer, BmSuiteState } from './bm-reducer'
 
 @Component({
   selector: 'bm-test-list',
@@ -49,9 +49,9 @@ export class BmTestListComponent {
   tests$:Observable<BmTest[]>
   running$:Observable<boolean>
 
-  constructor(private store:Store<any>) {
-    this.tests$ = store.select('tests');
-    this.running$ = store.select('isRunning');
+  constructor(private store:Store<{state:BmSuiteState}>) {
+    this.tests$ = store.select('state','tests');
+    this.running$ = store.select('state','isRunning');
   }
   
   newTest() {
